@@ -1,38 +1,51 @@
+// Default variables that can be overrided
 $flexbin-row-height: 300px !default;
 $flexbin-space: 5px !default;
 
-.flexbin {
+// Minxin for customize multiple Flexbin layout
+// For example, 300px height for desktop devices, 150px height for mobile devices
+@mixin flexbin($row-height, $space) {
     display: flex;
     overflow: hidden;
     flex-wrap: wrap;
-    margin: - $flexbin-space / 2;
+    margin: - $space / 2;
 
+    // Let final row align left fit if images are not enough to fill
+    // If the gap is very small, fill the final row
     &:after {
         content: '';
-        flex-grow: 999999999;
-    }
-
-    // Add margin around flexbin gallery
-    // Visual margin is the same with space between rows
-    &.flexbin-margin {
-        margin: $flexbin-space / 2;
+        flex-grow: 999999999; // avoid final row zoom too much to fit width
+        min-width: $row-height; // avoid small gap in final row (< $row-height)
+        height: 0;
     }
 
     > * {
         position: relative;
         display: block;
-        height: $flexbin-row-height;
-        margin: $flexbin-space / 2;
+        height: $row-height;
+        margin: $space / 2;
         flex-grow: 1;
 
         > img {
-            height: $flexbin-row-height;
+            height: $row-height;
             object-fit: cover;
             max-width: 100%;
             min-width: 100%;
             vertical-align: bottom;
         }
     }
+
+
+    // Add margin around flexbin gallery
+    // Visual margin is the same with space between rows
+    &.flexbin-margin {
+        margin: $space / 2;
+    }
+}
+
+// CSS class for basic usage
+.flexbin {
+    @include flexbin($flexbin-row-height, $flexbin-space);
 }
 
 
