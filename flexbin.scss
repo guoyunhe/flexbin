@@ -1,6 +1,12 @@
 // Default variables that can be overrided
 $flexbin-row-height: 300px !default;
 $flexbin-space: 5px !default;
+$flexbin-tablet-max: 768px;
+$flexbin-row-height-tablet: 150px !default;
+$flexbin-space-tablet: $flexbin-space !default;
+$flexbin-phone-max: 400px;
+$flexbin-row-height-phone: 100px !default;
+$flexbin-space-phone: $flexbin-space !default;
 
 // Minxin for customize multiple Flexbin layout
 // For example, 300px height for desktop devices, 150px height for mobile devices
@@ -45,7 +51,18 @@ $flexbin-space: 5px !default;
 
 // CSS class for basic usage
 .flexbin {
+    // Desktop devices
     @include flexbin($flexbin-row-height, $flexbin-space);
+
+    // Tablet devices
+    @media (max-width: $flexbin-tablet-max) {
+        @include flexbin($flexbin-row-height-tablet, $flexbin-space-tablet);
+    }
+
+    // Phone devices
+    @media (max-width: $flexbin-phone-max) {
+        @include flexbin($flexbin-row-height-phone, $flexbin-space-phone);
+    }
 }
 
 
