@@ -1,6 +1,6 @@
 {
   "name": "flexbin",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Flexible and gapless image gallery layout like Google Images and 500px.com",
   "main": "flexbin.scss",
   "scripts": {
