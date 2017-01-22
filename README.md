@@ -6,7 +6,7 @@ Flexible and gapless image gallery layout like Google Images and 500px.com. Base
 - Responsive, nice look on both desktop and mobile devices
 - Gapless, all spaces between images are the same
 - Little cropping, no deformation
-- SASS support
+- SaSS support
 - Chrome 31+, Firefox 36+, Safari 10+
 
 ![Screenshot](screenshot.png)
@@ -20,9 +20,8 @@ Flexible and gapless image gallery layout like Google Images and 500px.com. Base
 ### Download
 
 1. Download this git repo as zip or tar.gz file.
-2. NPM (TODO)
+2. NPM `npm install flexbin`
 3. Bower (TODO)
-4. cdnjs.com
 
 ### Import
 
@@ -79,16 +78,38 @@ If you want extra space surround Flexbin gallery, use "flexbin-margin" class:
 If you use SaSS, you can customize Flexbin further:
 
 ```scss
+// Desktop, large screen devices
 $flexbin-row-height: 200px; // height of image rows
 $flexbin-space: 10px; // space between images
 
+// Tablet, medium screen devices
+$flexbin-tablet-max: 800px;
+$flexbin-row-height-tablet: 150px;
+$flexbin-space-tablet: 8px;
+
+// Phone, small screen devices
+$flexbin-phone-max: 400px;
+$flexbin-row-height-phone: 100px;
+$flexbin-space-phone: 4px;
+
 @import "path/to/flexbin.scss";
+
+.my-flexbin {
+    @include flexbin(100px, 8px);
+}
+
+.my-flexbin-large {
+    @include flexbin(400px, 20px);
+
+    @media (max-width: 768px) {
+        @include flexbin(200px, 10px);
+    }
+}
 ```
 
 ## TODO
 
-- SaSS mixins and more options
-- Publish on NPM, Bower, Composer, Gem, etc.
+- Publish on Bower, Composer, Gem, etc.
 - Fallback mode for IE, Edge and other old browsers
 
 ## Copyright & License
