@@ -89,4 +89,4 @@ $flexbin-space: 10px; // space between images
 
 ## Copyright & License
 
-Copyright 2017 Guo Yunhe & xieranmaya. Code released under GNU General Public License version 3 or later. See [LICENSE](LICENSE).
+Copyright 2017 [Guo Yunhe](guoyunhebrave@gmail.com) & xieranmaya. Code released under GNU General Public License version 3 or later. See [LICENSE](LICENSE).
