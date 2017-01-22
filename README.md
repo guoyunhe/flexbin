@@ -11,6 +11,8 @@ Flexible and gapless image gallery layout like Google Images and 500px.com. Base
 
 ![Screenshot](screenshot.png)
 
+![Screenshot](screenshot-mobile.png)
+
 **Demo**: <https://guoyunhe.me/demo/flexbin/>
 
 ## Get Started
