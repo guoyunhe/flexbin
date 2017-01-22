@@ -1,10 +1,10 @@
 // Default variables that can be overrided
 $flexbin-row-height: 300px !default;
 $flexbin-space: 5px !default;
-$flexbin-tablet-max: 768px;
+$flexbin-tablet-max: 768px !default;
 $flexbin-row-height-tablet: 150px !default;
 $flexbin-space-tablet: $flexbin-space !default;
-$flexbin-phone-max: 400px;
+$flexbin-phone-max: 400px !default;
 $flexbin-row-height-phone: 100px !default;
 $flexbin-space-phone: $flexbin-space !default;
 
