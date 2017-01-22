@@ -7,6 +7,7 @@ Flexible and gapless image gallery layout like Google Images and 500px.com. Base
 - Gapless, all spaces between images are the same
 - Little cropping, no deformation
 - SASS support
+- Chrome 31+, Firefox 36+, Safari 10+
 
 ![Screenshot](screenshot.png)
 
@@ -86,6 +87,7 @@ $flexbin-space: 10px; // space between images
 
 - SaSS mixins and more options
 - Publish on NPM, Bower, Composer, Gem, etc.
+- Fallback mode for IE, Edge and other old browsers
 
 ## Copyright & License
 
