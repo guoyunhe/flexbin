@@ -1,0 +1,22 @@
+.flexbin {
+  display: flex;
+  overflow: hidden;
+  flex-wrap: wrap;
+  margin: -2.5px; }
+  .flexbin:after {
+    content: '';
+    flex-grow: 999999999; }
+  .flexbin.flexbin-margin {
+    margin: 2.5px; }
+  .flexbin > * {
+    position: relative;
+    display: block;
+    height: 300px;
+    margin: 2.5px;
+    flex-grow: 1; }
+    .flexbin > * > img {
+      height: 300px;
+      object-fit: cover;
+      max-width: 100%;
+      min-width: 100%;
+      vertical-align: bottom; }

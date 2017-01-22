@@ -1,0 +1,38 @@
+$flexbin-row-height: 300px !default;
+$flexbin-space: 5px !default;
+
+.flexbin {
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+    margin: - $flexbin-space / 2;
+
+    &:after {
+        content: '';
+        flex-grow: 999999999;
+    }
+
+    // Add margin around flexbin gallery
+    // Visual margin is the same with space between rows
+    &.flexbin-margin {
+        margin: $flexbin-space / 2;
+    }
+
+    > * {
+        position: relative;
+        display: block;
+        height: $flexbin-row-height;
+        margin: $flexbin-space / 2;
+        flex-grow: 1;
+
+        > img {
+            height: $flexbin-row-height;
+            object-fit: cover;
+            max-width: 100%;
+            min-width: 100%;
+            vertical-align: bottom;
+        }
+    }
+}
+
+
