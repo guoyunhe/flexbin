@@ -10,6 +10,8 @@ $flexbin-phone-max: 400px !default;
 $flexbin-row-height-phone: 100px !default;
 $flexbin-space-phone: $flexbin-space !default;
 
+$flexbin-add-end-space: false;
+
 // Minxin for customize multiple Flexbin layout
 // For example, 300px height for desktop devices, 150px height for mobile devices
 @mixin flexbin($row-height, $space) {
@@ -20,11 +22,13 @@ $flexbin-space-phone: $flexbin-space !default;
 
     // Let final row align left fit if images are not enough to fill
     // If the gap is very small, fill the final row
-    &:after {
-        content: '';
-        flex-grow: 999999999; // avoid final row zoom too much to fit width
-        min-width: $row-height; // avoid small gap in final row (< $row-height)
-        height: 0;
+    @if $flexbin-add-end-space {
+        &:after {
+            content: '';
+            flex-grow: 999999999; // avoid final row zoom too much to fit width
+            min-width: $row-height; // avoid small gap in final row (< $row-height)
+            height: 0;
+        }
     }
 
     > * {
@@ -66,5 +70,3 @@ $flexbin-space-phone: $flexbin-space !default;
         @include flexbin($flexbin-row-height-phone, $flexbin-space-phone);
     }
 }
-
-
