@@ -18,7 +18,8 @@ $flexbin-add-end-space: false;
     display: flex;
     overflow: hidden;
     flex-wrap: wrap;
-    margin: - $space / 2;
+    margin: 0 (-1 * $space / 2);
+    padding: 2.5px 0;
 
     // Let final row align left fit if images are not enough to fill
     // If the gap is very small, fill the final row
